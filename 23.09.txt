@@ -1,0 +1,1 @@
+iai vei, essa versão já ta com login e registro feito, e o menu já esta encaminhado apenas termine de estilizar e já parta pra cima das funcionalidade principal

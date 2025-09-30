@@ -5,8 +5,8 @@ import { Text, View } from "react-native";
 import { TextInput } from "react-native-gesture-handler";
 import { TouchableOpacity } from "react-native";
 
+
 export default function Talk () {
-  const TranscriptorComponent = () => {
      const [transcribedText, setTranscribedText] = useState('');
      const [typedtext, setTypedText] = useState('')
 
@@ -29,36 +29,34 @@ export default function Talk () {
       }
      }
 
-     const speakResponse = (textToSpeak) => {
+     const speakResponse = (textToSpeak: any) => {
       Speech.speak(textToSpeak, {
         language: 'pt-br',
         rate: 1.0,
       })
      }
      
-  }
+  
    return (
-    <View className="flex-1 p-4 bg-white">
-      {/* Área de Exibição do Texto Transcrito */}
+    <View className="flex-1 p-4">
       <View className="flex-grow justify-center p-4 rounded-lg bg-gray-100">
         <Text className="text-xl text-gray-800">{transcribedText}</Text>
       </View>
 
-      {/* Área de Entrada do Usuário */}
       <View className="mt-4">
         <TextInput
-          className="border border-gray-300 rounded-lg p-3 text-lg"
+          className="border text-white border-gray-300 rounded-lg p-3 text-lg"
           placeholder="Digite sua resposta aqui..."
-          value={typedText}
+          value={typedtext}
           onChangeText={setTypedText}
         />
       </View>
 
-      {/* Área dos Botões de Ação */}
+     
       <View className="flex-row justify-around mt-4">
         <TouchableOpacity
           className="bg-green-500 py-3 px-6 rounded-full"
-          onPress={() => {/* chamar a função startListening aqui */}}
+          onPress={() => {startListening}}
         >
           <Text className="text-white font-bold text-lg">Falar</Text>
         </TouchableOpacity>
@@ -72,4 +70,4 @@ export default function Talk () {
       </View>
     </View>
   );
-}
+};

@@ -1,0 +1,20 @@
+import { useState } from "react";
+import { View } from "react-native";
+import { Text } from "react-native";
+import { Image } from "react-native";
+
+
+export default function Photo () {
+    const [image, setImage] = useState('https://pixabay.com/pt/photos/homem-m%C3%A1scara-facial-modelo-5590983/')
+
+    return (
+        <View className="flex-1 items-center justify-center">
+            <Text>Configuração de Usuário</Text>
+            <Image
+            source={{uri: image }}
+            style = {{ width: 100, height: 100, borderRadius: 50}}
+        
+            />
+        </View>
+    )
+}
